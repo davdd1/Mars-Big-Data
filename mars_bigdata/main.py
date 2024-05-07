@@ -2,6 +2,9 @@ import requests
 import json
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+import os
 
 #requsta från mars apin, spara i JSon fil
 
