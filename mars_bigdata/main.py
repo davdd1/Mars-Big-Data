@@ -64,4 +64,4 @@ if st.session_state.current_image_index < num_images:
            .block-container {padding-top: 0!important;}
         </style>
     """, unsafe_allow_html=True)
-    cols[st.session_state.current_image_index].image(img_url, caption='Picture FROM MARS!', width=250)
+    cols[st.session_state.current_image_index].image(img_url, caption='Picture FROM MARS!', width=500)
