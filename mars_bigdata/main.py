@@ -18,22 +18,24 @@ def display_random_image(json_data):
     
     st.image(img_url, caption=random_image['camera'], width=500)
 
-sol = st.number_input("Enter a sol number:", min_value=0, max_value=1200, value=1000)
 
-if st.button("Get new photo"):
-    with open ('mars_data_weather.json', 'r') as f:
-        data = json.load(f)
 
-    display_random_image(data)
+sol = st.number_input("Enter a sol number:", min_value=0, max_value=1200, value=0)
 
-if sol > 0:
+confirme = st.checkbox("I confirm that I want to see the photo of the sol number entered above.")
+
+if sol > 0 and confirme:
     url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'
     data = requests.get(url)
-    
-    if data.status_code == 200:
-        with open('mars_data_weather.json', 'w') as f:
-            json.dump(data.json(), f, indent=4)
-        display_random_image(data.json())  # Display a single random image
+      
+    with open('mars_data_weather.json', 'w') as f:
+        json.dump(data.json(), f, indent=4)
 
-    else:
-        st.warning("No data was found for this sol number. Please try another number.")
+    with open ('mars_data_weather.json', 'r') as f:
+        data = json.load(f)    
+    display_random_image(data)  # Display a single random image
+    
+    if st.button("Get new photo"):
+        with open ('mars_data_weather.json', 'r') as f:
+            data = json.load(f)
+        display_random_image(data)
