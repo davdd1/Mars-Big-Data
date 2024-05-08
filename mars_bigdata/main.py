@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+import random
 
 apikey = 'Bgt2DAbyTrtQuPO1XbqtAeTzfuVAjUiViACsdkge'
 #requsta från mars apin, spara i JSon fil
@@ -34,19 +35,25 @@ with open('mars_data_weather.json', 'r') as f:
 # Get a list of photos
 photolinks = [photo['img_src'] for photo in json_data['photos']]
 
+
 # Dynamically adjust the number of columns based on the number of images
 num_images = len(photolinks)
-cols = st.columns(num_images)  # Adjust the number of columns to match the number of images
+cols = st.columns(1)  # Adjust the number of columns to match the number of images
 
 # Button to show the next image
 if st.button('Next Image'):
-    st.session_state.current_image_index += 1
-    if st.session_state.current_image_index >= num_images:
-        st.session_state.current_image_index = 0  # Reset to the first image if we reach the end
+    # Select a random image from the list
+    st.session_state.current_image_index = random.randint(0, num_images - 1)
 
 # Display the current image
 if st.session_state.current_image_index < num_images:
     img_url = photolinks[st.session_state.current_image_index]
+    for url in json_data['photos']:
+        if url['img_src'] == img_url:
+            cameraname = url['camera']['full_name']
+            break
+        else:
+            cameraname = 'No camera name found'
     
     # Check if the image URL is valid and accessible
     try:
@@ -59,9 +66,10 @@ if st.session_state.current_image_index < num_images:
     
     # Display the image with a width of 250, Streamlit will adjust the height
     # Use markdown to apply custom CSS for positioning
+    #padding top 0 should always be 10 pixels from the left
     st.markdown("""
         <style>
-           .block-container {padding-top: 0!important;}
+           .block-container {padding-left: 10px!important}     
         </style>
     """, unsafe_allow_html=True)
-    cols[st.session_state.current_image_index].image(img_url, caption='Picture FROM MARS!', width=500)
+    cols[0].image(img_url, caption=str(cameraname), width=500)
