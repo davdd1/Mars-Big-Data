@@ -2,8 +2,10 @@ import requests
 import json
 import streamlit as st
 import random
+import pandas as pd
 
 apikey = 'Bgt2DAbyTrtQuPO1XbqtAeTzfuVAjUiViACsdkge'
+
 
 def display_random_image(json_data):
     random_image = random.choice(json_data['photos'])
@@ -48,20 +50,21 @@ set_background()
 
 sol = st.number_input("Enter a sol number:", min_value=0, max_value=1200, value=0)
 
-confirme = st.checkbox("I confirm that I want to see the photo of the sol number entered above.")
-
-if sol > 0 and confirme:
-    url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'
-    data = requests.get(url)
-      
-    with open('mars_data_weather.json', 'w') as f:
-        json.dump(data.json(), f, indent=4)
-
-    with open ('mars_data_weather.json', 'r') as f:
-        data = json.load(f)    
-    display_random_image(data)  # Display a single random image
-    
-if st.button("Get new photo"):
+if sol > 0 :
+    url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'  
     with open ('mars_data_weather.json', 'r') as f:
         data = json.load(f)
-    display_random_image(data)
+
+    if sol != data['photos'][0]['sol']: #kollar om vi behöver hämta ny data eller ej
+        data = requests.get(url)
+        with open('mars_data_weather.json', 'w') as f:
+            json.dump(data.json(), f, indent=4)
+
+    
+if st.button("Get Image :sunglasses:"):
+    with open('mars_data_weather.json', 'r') as f:
+        data = json.load(f)
+
+        display_random_image(data)
+         
+    
