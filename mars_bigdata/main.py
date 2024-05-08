@@ -47,6 +47,7 @@ if st.button('Next Image'):
 
 # Display the current image
 if st.session_state.current_image_index < num_images:
+    
     img_url = photolinks[st.session_state.current_image_index]
     for url in json_data['photos']:
         if url['img_src'] == img_url:
