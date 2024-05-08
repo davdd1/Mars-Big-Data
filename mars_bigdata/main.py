@@ -7,7 +7,6 @@ import random
 
 apikey = 'Bgt2DAbyTrtQuPO1XbqtAeTzfuVAjUiViACsdkge'
 #requsta från mars apin, spara i JSon fil
-
 #ta datan och hantera dvs visualisera i pandas dataframe
 
 #skapa en streamlit app som visar datan
@@ -25,13 +24,13 @@ apikey = 'Bgt2DAbyTrtQuPO1XbqtAeTzfuVAjUiViACsdkge'
 st.set_page_config(layout="wide")
 
 def set_background():
-    api_key = "DEMO_KEY"
-    date = "2024-05-04"
-    url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}&date={date}"
-    response = requests.get(url)
-    data = response.json()
+    #api_key = "DEMO_KEY"
+    #date = "2024-05-04"
+    url = "https://apod.nasa.gov/apod/image/2405/three_ats_beletsky.jpg"
+    #response = requests.get(url)
+    #data = response.json()
 
-    img_url = data["url"]
+    img_url = url
 
     st.markdown(
         f"""
