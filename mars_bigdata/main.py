@@ -24,6 +24,33 @@ apikey = 'Bgt2DAbyTrtQuPO1XbqtAeTzfuVAjUiViACsdkge'
 # Set the page layout to wide to give more space for the image
 st.set_page_config(layout="wide")
 
+def set_background():
+    api_key = "DEMO_KEY"
+    date = "2024-05-04"
+    url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}&date={date}"
+    response = requests.get(url)
+    data = response.json()
+
+    img_url = data["url"]
+
+    st.markdown(
+        f"""
+        <style>
+            .stApp {{
+                background: url("{img_url}") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+set_background()
+
+
 # Initialize session state for the current image index
 if 'current_image_index' not in st.session_state:
     st.session_state.current_image_index = 0
