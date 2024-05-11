@@ -61,6 +61,9 @@ df = pd.read_csv('mars-weather.csv') #laddar in data från mars-weather.csv
 df['sol'] = df['sol'].astype(int) #skapar en ny kolumn med år
 df = df.dropna(subset=['min_temp', 'max_temp']) #tar bort rader som inte är relevanta
 
+
+
+average_pressure_by_sols = df.groupby('sol')['pressure'].mean()
 average_temps_by_sols = df.groupby('sol')[['min_temp', 'max_temp']].mean()
 
 with col1: #vänstra kolumnen
@@ -93,6 +96,8 @@ with col1: #vänstra kolumnen
     
 
 with col3: #högra kolumnen
+    
+    # Plot the average temperature by sol
     fig, ax = plt.subplots(figsize=(10, 6))
     min_temp = average_temps_by_sols['min_temp'].mean()
     plt.plot(average_temps_by_sols.index, average_temps_by_sols['min_temp'], label='Min Temp', color='blue') #graf för min temp
@@ -103,11 +108,16 @@ with col3: #högra kolumnen
     plt.title('Mars Weather')
     plt.legend()
     plt.show()
-
-# Display plot in Streamlit
-    st.title('Average Temperature Over the Years')
-    st.pyplot(plt)
-
+    st.title('Mars Temperature / pressure')
+    st.pyplot(fig)
+            # Plot the average pressure by sol
+    fig, ax = plt.subplots(figsize=(10, 6))
+    plt.plot(average_pressure_by_sols.index, average_pressure_by_sols, label='Pressure', color='green')
+    plt.xlabel('Sol')
+    plt.ylabel('Pressure')
+    plt.title('Mars Weather - Pressure')
+    plt.legend()
+    st.pyplot(fig)
 
 def set_background():
     #api_key = "DEMO_KEY"
