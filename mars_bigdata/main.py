@@ -30,8 +30,6 @@ with col2:
                 st.write(f"Earth Date: {df['terrestrial_date'][sol]}")
                 break    
             
-        
-
 def send_image_request(sol): 
     url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'
 
@@ -56,12 +54,9 @@ def send_image_request(sol):
     with open('mars_data_weather.json', 'w') as f:
         json.dump(newdata.json(), f, indent=4)
 
-
 df = pd.read_csv('mars-weather.csv') #laddar in data från mars-weather.csv
 df['sol'] = df['sol'].astype(int) #skapar en ny kolumn med år
 df = df.dropna(subset=['min_temp', 'max_temp']) #tar bort rader som inte är relevanta
-
-
 
 average_pressure_by_sols = df.groupby('sol')['pressure'].mean()
 average_temps_by_sols = df.groupby('sol')[['min_temp', 'max_temp']].mean()
@@ -93,8 +88,6 @@ with col1: #vänstra kolumnen
         else:
             display_random_image(data)
         
-    
-
 with col3: #högra kolumnen
     
     # Plot the average temperature by sol
@@ -142,5 +135,5 @@ def set_background():
         """,
         unsafe_allow_html=True
     )
-set_background()
 
+set_background()
