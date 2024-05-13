@@ -115,7 +115,7 @@ with col3: #högra kolumnen
 def set_background():
     #api_key = "DEMO_KEY"
     #date = "2024-05-04"
-    url = "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?cs=srgb&dl=pexels-felixmittermeier-956981.jpg&fm=jpg"
+    url = "https://cdn.vox-cdn.com/thumbor/WPN0JKUI7P0XfPs1FBrrG_ioXYE=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9985019/18199018792_ac1c461035_o.jpg"
     #response = requests.get(url)
     #data = response.json()
 
