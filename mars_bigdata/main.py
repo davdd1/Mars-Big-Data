@@ -115,7 +115,7 @@ with col3: #högra kolumnen
 def set_background():
     #api_key = "DEMO_KEY"
     #date = "2024-05-04"
-    url = "https://apod.nasa.gov/apod/image/2405/three_ats_beletsky.jpg"
+    url = "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?cs=srgb&dl=pexels-felixmittermeier-956981.jpg&fm=jpg"
     #response = requests.get(url)
     #data = response.json()
 
