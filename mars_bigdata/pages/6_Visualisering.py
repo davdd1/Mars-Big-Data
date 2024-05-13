@@ -22,8 +22,8 @@ with col1:
 
 
 
-    ## - Slutsatser 
-    ###  *Vi kan dra slutsatser från våra data*
+    ## - Bibliotek för visualisering 
+    ###  *Vi använder bibliotek som matplotlib och pandas för att skapa grafer -- :arrow_forward:*
 
 
 
@@ -49,9 +49,9 @@ with col2:
 
     average_pressure_by_sols = df.groupby('sol')['pressure'].mean()
     fig, ax = plt.subplots(figsize=(10, 6))
-    plt.plot(average_pressure_by_sols.index, average_pressure_by_sols, label='Pressure', color='green')
+    plt.plot(average_pressure_by_sols.index, average_pressure_by_sols, label='Pressure (Pa)', color='green')
     plt.xlabel('Sol')
-    plt.ylabel('Pressure')
+    plt.ylabel('Pressure (Pa)')
     plt.title('Mars Pressure by sol / time')
     plt.legend()
     st.pyplot(fig)
