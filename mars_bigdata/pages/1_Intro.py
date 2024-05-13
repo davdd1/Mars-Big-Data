@@ -2,6 +2,7 @@ import streamlit as st
 import time
 import pandas as pd
 import numpy as np
+import os
 
 st.set_page_config(layout="wide", page_title="Mars Super Smart ML", page_icon="🚀", initial_sidebar_state="auto")
 col1, col2= st.columns(2)
@@ -9,7 +10,6 @@ col1, col2= st.columns(2)
 with col1:
     welcome_sequence = """
     # :red[ Välkommna ! ] :sunglasses: :moon:
-
 
     """
 
@@ -28,11 +28,6 @@ with col1:
     - ## Hämta bilder från :red[**Mars**] och analysera dem
 
     """
-
-
-
-
-
     def stream_data():
         for char in welcome_sequence:
             yield char 
@@ -50,8 +45,7 @@ with col1:
 
     st.write_stream(stream_data())
 
+
+
 with col2:
-    for i in range(10):
-        print ("\n")
-        
     st.image("https://m.media-amazon.com/images/S/pv-target-images/1693a5d8c96fec05a3e1636d5c4566ac0307929fe79e8bbcdb91dda5292d142f.jpg", use_column_width=True)

@@ -2,13 +2,10 @@ import streamlit as st
 import time
 import pandas as pd
 import numpy as np
-
+import os
 st.set_page_config(layout="wide", page_title="Mars Super Smart ML", page_icon="🚀", initial_sidebar_state="auto")
-
 welcome_sequence = """
 # :red[ Målgrupp ] :raised_hand_with_fingers_splayed: :nerd_face:
-
-
 """
 
 questions = """
@@ -20,15 +17,7 @@ questions = """
 
 ## - Entusiaster
 
-
 """
-
-
-
-
-
-
-
 def stream_data():
     for char in welcome_sequence:
         yield char 
@@ -41,3 +30,4 @@ def stream_data():
 
 
 st.write_stream(stream_data())
+
