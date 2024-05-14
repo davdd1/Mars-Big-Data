@@ -40,7 +40,7 @@ with col1:
     st.write_stream(stream_data())
 
 with col2:
-    df = pd.read_csv('mars-weather.csv') #laddar in data från mars-weather.csv
+    df = pd.read_csv('pages\mars-weather.csv') #laddar in data från mars-weather.csv
     df['sol'] = df['sol'].astype(int) #skapar en ny kolumn med år
     df = df.dropna(subset=['min_temp', 'max_temp']) #tar bort rader som inte är relevanta
 
