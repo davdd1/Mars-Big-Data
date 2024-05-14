@@ -11,6 +11,16 @@
             },
             "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01800/mhli/1800MH0003350020701072I01_DXXX.jpg",
             "earth_date": "2017-08-29",
+            "id": 148,
+            "sol": 760,
+            "camera": {
+                "id": 20,
+                "name": "FHAZ",
+                "rover_id": 5,
+                "full_name": "Front Hazard Avoidance Camera"
+            },
+            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00760/opgs/edr/fcam/FRB_464954500EDR_F0421020FHAZ00323M_.JPG",
+            "earth_date": "2014-09-25",
             "rover": {
                 "id": 5,
                 "name": "Curiosity",
@@ -63,6 +73,16 @@
             },
             "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01800/mhli/1800MH0003350020701071I01_DXXX.jpg",
             "earth_date": "2017-08-29",
+            "id": 5036,
+            "sol": 760,
+            "camera": {
+                "id": 20,
+                "name": "FHAZ",
+                "rover_id": 5,
+                "full_name": "Front Hazard Avoidance Camera"
+            },
+            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00760/opgs/edr/fcam/FLB_464954500EDR_F0421020FHAZ00323M_.JPG",
+            "earth_date": "2014-09-25",
             "rover": {
                 "id": 5,
                 "name": "Curiosity",
@@ -115,6 +135,16 @@
             },
             "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01800/mhli/1800MH0003350020701070I01_DXXX.jpg",
             "earth_date": "2017-08-29",
+            "id": 874,
+            "sol": 760,
+            "camera": {
+                "id": 21,
+                "name": "RHAZ",
+                "rover_id": 5,
+                "full_name": "Rear Hazard Avoidance Camera"
+            },
+            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00760/opgs/edr/rcam/RRB_464954534EDR_F0421020RHAZ00323M_.JPG",
+            "earth_date": "2014-09-25",
             "rover": {
                 "id": 5,
                 "name": "Curiosity",
@@ -1623,6 +1653,16 @@
             },
             "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01800/mhli/1800MH0001900000701041I01_DXXX.jpg",
             "earth_date": "2017-08-29",
+            "id": 9947,
+            "sol": 760,
+            "camera": {
+                "id": 21,
+                "name": "RHAZ",
+                "rover_id": 5,
+                "full_name": "Rear Hazard Avoidance Camera"
+            },
+            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00760/opgs/edr/rcam/RLB_464954534EDR_F0421020RHAZ00323M_.JPG",
+            "earth_date": "2014-09-25",
             "rover": {
                 "id": 5,
                 "name": "Curiosity",
