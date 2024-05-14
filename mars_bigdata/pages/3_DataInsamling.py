@@ -2,6 +2,9 @@ import streamlit as st
 import time
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 
 st.set_page_config(layout="wide", page_title="Mars Super Smart ML", page_icon="🚀", initial_sidebar_state="auto")
@@ -47,15 +50,42 @@ with col2:
     df = df.dropna(subset=['min_temp', 'max_temp']) #tar bort rader som inte är relevanta
     average_temps_by_sols = df.groupby('sol')[['min_temp', 'max_temp']].mean()
 
-    fig, ax = plt.subplots(figsize=(10, 6))
-    min_temp = average_temps_by_sols['min_temp'].mean()
-    plt.plot(average_temps_by_sols.index, average_temps_by_sols['min_temp'], label='Min Temp', color='blue') #graf för min temp
-    plt.plot(average_temps_by_sols.index, average_temps_by_sols['max_temp'], label='Max Temp', color='red') #graf för max temp
+    # Prepare the data
+    X = average_temps_by_sols.index.values.reshape(-1, 1)  # Features
+    y_min = average_temps_by_sols['min_temp'].values  # Target for min temp
+    y_max = average_temps_by_sols['max_temp'].values  # Target for max temp
 
-    plt.xlabel('Sol')
-    plt.ylabel('Temperature')
-    plt.title('Mars Weather')
-    plt.legend()
-    plt.show()
-    st.title('Mars Temperature over time')
-    st.pyplot(fig)
+    # Split the data into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y_min, test_size=0.2, random_state=42)
+
+    # Train the model
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+
+    # Make predictions
+    predictions = model.predict(X_test)
+    # Plot the original vs predicted values
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.scatter(X_test, y_test, color='blue', label='Actual')
+    ax.plot(X_test, predictions, color='red', label='Predicted')
+    ax.set_xlabel('Sol')
+    ax.set_ylabel('Min Temp')
+    ax.set_title('Mars Min Temp Prediction')
+    ax.legend()
+    st.pyplot(fig)  # Use st.pyplot() to display the plot in Streamlit
+
+    # Repeat for Max Temp
+    X_train, X_test, y_train, y_test = train_test_split(X, y_max, test_size=0.2, random_state=42)
+    model.fit(X_train, y_train)
+    predictions = model.predict(X_test)
+    mse = mean_squared_error(y_test, predictions)
+    print(f"Mean Squared Error for Max Temp: {mse}")
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.scatter(X_test, y_test, color='blue', label='Actual')
+    ax.plot(X_test, predictions, color='red', label='Predicted')
+    ax.set_xlabel('Sol')
+    ax.set_ylabel('Max Temp')
+    ax.set_title('Mars Max Temp Prediction')
+    ax.legend()
+    st.pyplot(fig)  # Use st.pyplot() to display the plot in Streamlit
