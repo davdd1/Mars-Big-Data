@@ -15,18 +15,18 @@ with col1:
     """
 
     questions = """
-    ## - En hybrid approach
-    ### *Vi använder oss av både realtids- och batchinsamling*
-
-
-
-    ## - Real-time ingestion
-    ### *Strömma data från API:er direkt till vår machine learning-modell*
-
-
-
     ## - Batch ingestion
-    ### *Hämta stor mängder data i intervaller*
+    ### *Hämta stor mängder data i långa intervaller*
+
+
+
+    ## - Fördel för vår modell
+    ### *Vi kan använda data från tidigare observationer för att förutsäga framtida observationer*
+
+
+
+    ## - Nackdelar?
+    ### *oförutsägbara händelser kan påverka datainsamlingen*
 
     """
 
