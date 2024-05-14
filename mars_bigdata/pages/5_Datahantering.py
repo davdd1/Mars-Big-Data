@@ -40,8 +40,6 @@ with col1:
         for char in questions:
             yield char
 
-
-
     st.write_stream(stream_data())
 
 with col2:
@@ -63,11 +61,7 @@ with col2:
                 st.write(f"Pressure: {df['pressure'][sol]} Pa")
                 st.write(f"Earth Date: {df['terrestrial_date'][sol]}")
                 break    
-    
-    
-    
-    
-    
+     
     def send_image_request(sol): 
         url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'
 
@@ -117,5 +111,3 @@ with col2:
             st.warning("No data available")
         else:
             display_random_image(data)
-
-    

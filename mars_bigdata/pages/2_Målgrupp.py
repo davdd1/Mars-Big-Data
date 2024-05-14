@@ -27,7 +27,5 @@ def stream_data():
         yield char
         time.sleep(0.05)
 
-
-
 st.write_stream(stream_data())
 

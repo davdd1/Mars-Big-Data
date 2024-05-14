@@ -34,8 +34,6 @@ with col1:
             yield char
             time.sleep(0.02)
 
-
-
     st.write_stream(stream_data())
 
 with col2:
@@ -54,7 +52,5 @@ with col2:
         for char in slide2:
             yield char
             time.sleep(0.02)
-
-
 
     st.write_stream(stream_data())
