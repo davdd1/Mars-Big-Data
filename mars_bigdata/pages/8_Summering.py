@@ -14,12 +14,6 @@ questions = """
 ### (( Gäller alla utom osama ))
 """
 
-
-
-
-
-
-
 def stream_data():
     for char in welcome_sequence:
         yield char 
@@ -28,7 +22,5 @@ def stream_data():
     for char in questions:
         yield char
         time.sleep(1.3)
-
-
 
 st.write_stream(stream_data())

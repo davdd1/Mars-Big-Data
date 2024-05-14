@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 st.set_page_config(layout="wide", page_title="Mars Super Smart ML", page_icon="🚀", initial_sidebar_state="auto")
 col1, col2= st.columns(2)
 
@@ -37,8 +36,6 @@ with col1:
         for char in questions:
             yield char
             time.sleep(0.02)
-
-
 
     st.write_stream(stream_data())
 
