@@ -44,7 +44,7 @@ with col1:
 
 with col2:
     def display_image_info(img_url):
-        with open ('mars_data_weather.json', 'r') as f:
+        with open ('pages\mars_data_weather.json', 'r') as f:
             data = json.load(f)
             for photo in data['photos']: #för att veta vilken sol det är
                 if photo['img_src'] == img_url:
@@ -53,7 +53,7 @@ with col2:
                     break
         #read from the csv file
         #display the min and max temp for the sol    
-        df = pd.read_csv('mars-weather.csv')
+        df = pd.read_csv('pages\mars-weather.csv')
         for sol in df['sol']:
             if sol == rightSol:
                 st.write(f"Min Temp: {df['min_temp'][sol]}", "°C")
@@ -66,7 +66,7 @@ with col2:
         url = f'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={apikey}'
 
         try:
-            with open('mars_data_weather.json', 'r') as f:
+            with open('pages\mars_data_weather.json', 'r') as f:
                 data = json.load(f)
         except FileNotFoundError:
             st.warning("File not found")
@@ -83,7 +83,7 @@ with col2:
             return  # Exit the function if no data is available for the sol
 
     # Update the JSON file only if new data is fetched
-        with open('mars_data_weather.json', 'w') as f:
+        with open('pages\mars_data_weather.json', 'w') as f:
             json.dump(newdata.json(), f, indent=4)
 
     sol = st.number_input("Enter a sol number:", min_value=0, max_value=1200, value=0)
@@ -105,7 +105,7 @@ with col2:
         display_image_info(img_url)
     
     if st.button("Get Image :sunglasses:"):
-        with open('mars_data_weather.json', 'r') as f:
+        with open('pages\mars_data_weather.json', 'r') as f:
             data = json.load(f)
         if (data['photos'] == []):
             st.warning("No data available")
