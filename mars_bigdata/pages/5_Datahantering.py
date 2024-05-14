@@ -44,7 +44,7 @@ with col1:
 
 with col2:
     def display_image_info(img_url):
-        with open ('pages\mars_data_weather.json', 'r') as f:
+        with open ('pages/mars_data_weather.json', 'r') as f:
             data = json.load(f)
             for photo in data['photos']: #för att veta vilken sol det är
                 if photo['img_src'] == img_url:
@@ -53,13 +53,13 @@ with col2:
                     break
         #read from the csv file
         #display the min and max temp for the sol    
-        df = pd.read_csv('pages\mars-weather.csv')
-        for sol in df['sol']:
+        df = pd.read_csv('pages/mars-weather.csv', index_col='sol')
+        for sol in df.index:
             if sol == rightSol:
-                st.write(f"Min Temp: {df['min_temp'][sol]}", "°C")
-                st.write(f"Max Temp: {df['max_temp'][sol]}", "°C")
-                st.write(f"Pressure: {df['pressure'][sol]} Pa")
-                st.write(f"Earth Date: {df['terrestrial_date'][sol]}")
+                st.write(f"Min Temp: {df.loc[sol, 'min_temp']}", "°C")
+                st.write(f"Max Temp: {df.loc[sol, 'max_temp']}", "°C")
+                st.write(f"Pressure: {df.loc[sol, 'pressure']} Pa")
+                st.write(f"Earth Date: {df.loc[sol, 'terrestrial_date']}")
                 break    
      
     def send_image_request(sol): 
@@ -86,7 +86,7 @@ with col2:
         with open('pages\mars_data_weather.json', 'w') as f:
             json.dump(newdata.json(), f, indent=4)
 
-    sol = st.number_input("Enter a sol number:", min_value=0, max_value=1200, value=0)
+    sol = st.number_input("Enter a sol number:", min_value=0, max_value=1900, value=0)
     if sol:
         send_image_request(sol)
 
