@@ -20,8 +20,8 @@ with col1:
 
 
 
-    ## - Flexibilitet och skalbarhet :rocket:
-    ### *Data Lake är flexibelt och kan hantera alla typer av data*
+    ## - Nackdelar med en data lake?
+    ### *Träsk av stora mängder data*
 
 
 
@@ -35,8 +35,6 @@ with col1:
         for char in questions:
             yield char
             time.sleep(0.02)
-
-
 
     st.write_stream(stream_data())
 

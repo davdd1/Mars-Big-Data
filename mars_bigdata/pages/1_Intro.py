@@ -25,7 +25,7 @@ with col1:
 
     - ## Förutsäga vädret på :red[**Mars**] med hjälp av :gray[**Maskininlärning**].
 
-    - ## Hämta bilder från :red[**Mars**] och analysera dem
+    - ## Hämta bilder från :red[**Mars**] och analysera dem :scream:  
 
     """
     def stream_data():
@@ -41,11 +41,8 @@ with col1:
             yield char
             time.sleep(0.02)
 
-
-
     st.write_stream(stream_data())
-
-
 
 with col2:
     st.image("https://m.media-amazon.com/images/S/pv-target-images/1693a5d8c96fec05a3e1636d5c4566ac0307929fe79e8bbcdb91dda5292d142f.jpg", use_column_width=True)
+    st.write("**Bild på rovern curiosity på Mars**")

@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 st.set_page_config(layout="wide", page_title="Mars Super Smart ML", page_icon="🚀", initial_sidebar_state="auto")
 col1, col2= st.columns(2)
 
@@ -38,12 +37,10 @@ with col1:
             yield char
             time.sleep(0.02)
 
-
-
     st.write_stream(stream_data())
 
 with col2:
-    df = pd.read_csv('mars-weather.csv') #laddar in data från mars-weather.csv
+    df = pd.read_csv('pages\mars-weather.csv') #laddar in data från mars-weather.csv
     df['sol'] = df['sol'].astype(int) #skapar en ny kolumn med år
     df = df.dropna(subset=['min_temp', 'max_temp']) #tar bort rader som inte är relevanta
 
