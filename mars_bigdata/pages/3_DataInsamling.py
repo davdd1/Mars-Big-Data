@@ -29,7 +29,7 @@ with col1:
 
 
     ## - Nackdelar?
-    ### *oförutsägbara händelser kan påverka datainsamlingen*
+    ### *oförutsägbara händelser kan påverka datainsamlingen. Långa perioder mellan datainsamlingar*
 
     """
 

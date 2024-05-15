@@ -11,9 +11,9 @@ with col1:
     """
 
     questions = """
-    ## - Forskare
+    ## - Nischat område
 
-    ## - Astrofysiker
+    ## - Astrofysiker / Forskare
 
     ## - Dataintresserade
 

@@ -25,6 +25,11 @@ with col1:
 
 
 
+    ## - Json och CSV
+    ### *Vi använder JSON och CSV för att lagra data från Mars*
+
+
+
     """
 
     def stream_data():
@@ -40,4 +45,4 @@ with col1:
 
 with col2:
     #display databasbild.png on the right side
-    st.image('databasbild.png', use_column_width=True)
+    st.image('Databasbilder2.png', use_column_width=True)
