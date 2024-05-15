@@ -21,7 +21,7 @@ with col1:
     ### *Integrering av olika datakällor som bilder från solsystemet (JSON) och miljöinformation (CSV) ger en mer omfattande förståelse av Mars.*
 
     # Velocity: 
-    ### *Snabb överföring av data från Mars till jorden möjliggörs genom servrar och satelliter för nära realtidsanalys.*
+    ### *Snabb överföring av data från Mars till jorden möjliggörs genom servrar och satelliter. Vi behöver inte många servrar.*
 
     """
 
