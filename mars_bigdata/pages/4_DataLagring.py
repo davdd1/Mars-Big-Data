@@ -16,14 +16,12 @@ with col1:
     questions = """
     ## - Data Lake :wave:
     ### *Samlar stora mängder data från olika enheter*
+    ### *Skalbarhet och flexibilitet*
 
-
-
-
+    
     ## - Nackdelar med en data lake?
+    ### *Kvalitetskontroll*
     ### *Träsk av stora mängder data*
-
-
 
     ## - Json och CSV
     ### *Vi använder JSON och CSV för att lagra data från Mars*

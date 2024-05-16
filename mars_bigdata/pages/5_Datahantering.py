@@ -26,7 +26,7 @@ with col1:
 
 
     ## - Datahantering :bar_chart:
-    ### *Vi samlar in, lagrar och bearbetar data för att kunna använda den i vår modell*
+    ### *Vi samlar in, lagrar och bearbetar data för att kunna träna vår modell*
 
 
 
