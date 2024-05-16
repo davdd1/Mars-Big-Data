@@ -9,4 +9,4 @@ Detta projekt syftar till att samla och analysera stora mängder data relaterade
 För att köra programmet skriver du "streamlit run main.py"
 
 ## Skapare
-Jesper, David och Alex
+### Jesper, David och Alex
