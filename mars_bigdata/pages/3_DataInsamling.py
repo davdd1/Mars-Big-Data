@@ -72,8 +72,8 @@ with col2:
     # Plot the original vs predicted values
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.scatter(X_test, y_test, color='blue', label='Actual')
-    ax.plot(X_test, predictions, color='red', label='Predicted')
-    ax.plot(extended_sol_values, extended_predictions, color='green', label='Extended Prediction')
+    ax.plot(X_test, predictions, color='red', label='Trend Line')
+    ax.plot(extended_sol_values, extended_predictions, color='green', label='Trend Prediction')
     ax.set_xlabel('Sol')
     ax.set_ylabel('Min Temp')
     ax.set_title('Mars Min Temp Prediction')
@@ -89,8 +89,8 @@ with col2:
 
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.scatter(X_test, y_test, color='blue', label='Actual')
-    ax.plot(X_test, predictions, color='red', label='Predicted')
-    ax.plot(extended_sol_values, model.predict(extended_sol_values), color='green', label='Extended Prediction')
+    ax.plot(X_test, predictions, color='red', label='Trend Line')
+    ax.plot(extended_sol_values, model.predict(extended_sol_values), color='green', label='Trend Prediction')
     ax.set_xlabel('Sol')
     ax.set_ylabel('Max Temp')
     ax.set_title('Mars Max Temp Prediction')
