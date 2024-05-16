@@ -19,7 +19,7 @@ with col1:
     """
 
     questions = """
-    ## - Machine learnining :robot:
+    ## - Machine learning
     ### *Vi använder maskininlärning för att förutsäga vädret på Mars*
 
 
