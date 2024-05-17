@@ -21,6 +21,6 @@ def stream_data():
 
     for char in questions:
         yield char
-        time.sleep(1.3)
+        time.sleep(4)
 
 st.write_stream(stream_data())
